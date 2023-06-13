@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <brush />
     <highlight
       text="从这个角度来看, 
       了解清楚随机一段废话到底是一种怎么样的存在, 
@@ -9,14 +10,19 @@
       这句话看似简单，但其中的阴郁不禁让人深思. 一般来说, 这是不可避免的. 
       随机一段废话似乎是一种巧合，但如果我们从一个更大的角度看待问题，
       这似乎是一种不可避免的事实. 那么"
-      :keywords="['这个', '随机一段', '关键','不禁让人深思']"
+      :keywords="['这个', '随机一段', '关键', '不禁让人深思']"
     ></highlight>
-    <highlight text="Lorem ipsum dolor sit, 
-    amet consectetur adipisicing elit. Nam, 
-    rem quis laudantium assumenda laborum, 
-    ipsum totam, ab aut impedit quisquam ullam 
-    dicta facilis. Impedit dolore dicta labore 
-    rem. Eaque, dignissimos." :keywords="['impedit','elit','consectetur','labore']" light="#e74c2c" color="#fff"></highlight>
+    <highlight
+      text="Lorem ipsum dolor sit, 
+      amet consectetur adipisicing elit. Nam, 
+      rem quis laudantium assumenda laborum, 
+      ipsum totam, ab aut impedit quisquam ullam 
+      dicta facilis. Impedit dolore dicta labore 
+      rem. Eaque, dignissimos."
+      :keywords="['impedit', 'elit', 'consectetur', 'labore']"
+      light="#e74c2c"
+      color="#fff"
+    ></highlight>
   </div>
 </template>
 
@@ -34,7 +40,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  width: 300px;
+  width: 500px;
   margin: 0 auto;
 }
 div {

@@ -1,11 +1,12 @@
 {
-  "name": "hight-light-brunch",
-  "version": "0.1.0",
-  "private": true,
+  "name": "hight-light",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-prod": "vue-cli-service build --target lib --name index --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -39,5 +40,20 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "highlight specific content",
+  "main": "lib/index.umd.min.js",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yer11214/hight-light-brush.git"
+  },
+  "author": "ran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yer11214/hight-light-brush/issues"
+  },
+  "homepage": "https://github.com/Yer11214/hight-light-brush#readme"
 }
