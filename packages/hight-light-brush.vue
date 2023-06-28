@@ -49,6 +49,7 @@ export default {
   },
   computed: {
     highlightedFragments() {
+      console.log("highlightedFragments")
       if (!this.text) {
         return [];
       }
