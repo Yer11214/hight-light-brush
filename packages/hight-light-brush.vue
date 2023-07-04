@@ -40,16 +40,20 @@ export default {
       default: "",
     },
     // 自定义样式
-    customStyle:{
+    customStyle: {
       type: Object,
       default: () => {
-        return {}
-      }
-    }
+        return {};
+      },
+    },
+    // 是否只高亮第一个关键字
+    highlightFirstOnly: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     highlightedFragments() {
-      console.log("highlightedFragments")
       if (!this.text) {
         return [];
       }
@@ -58,21 +62,36 @@ export default {
       let remainingText = this.text;
 
       this.keywords.forEach((keyword) => {
-        const index = remainingText
+        let index = remainingText
           .toLowerCase()
           .indexOf(keyword.toLowerCase());
         if (index !== -1) {
-          if (index > 0) {
+          if (this.highlightFirstOnly) {
             fragments.push({
               text: remainingText.substring(0, index),
               highlighted: false,
             });
+            fragments.push({
+              text: remainingText.substr(index, keyword.length),
+              highlighted: true,
+            });
+            remainingText = remainingText.substr(index + keyword.length);
+          } else {
+            while (index !== -1) {
+              if (index > 0) {
+                fragments.push({
+                  text: remainingText.substring(0, index),
+                  highlighted: false,
+                });
+              }
+              fragments.push({
+                text: remainingText.substr(index, keyword.length),
+                highlighted: true,
+              });
+              remainingText = remainingText.substr(index + keyword.length);
+              index = remainingText.toLowerCase().indexOf(keyword.toLowerCase());
+            }
           }
-          fragments.push({
-            text: remainingText.substr(index, keyword.length),
-            highlighted: true,
-          });
-          remainingText = remainingText.substr(index + keyword.length);
         }
       });
 

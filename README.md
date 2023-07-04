@@ -68,3 +68,4 @@ export default {
 | light       | 指定高亮颜色的 CSS 颜色值。        | String | "#fbda32" | 否       |
 | color       | 指定文本颜色的 CSS 颜色值.         | String | ""        | 否       |
 | customStyle | 自定义样式                         | Object | ""        | 否       |
+| highlightFirstOnly | 是否只高亮第一个关键字                         | Boolean | false        | 否       |
